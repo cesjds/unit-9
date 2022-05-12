@@ -35,7 +35,7 @@ public class Worksheet2 {
 
 
     // Pre-condition: none
-    // Post-condition: num is raised to exp and so we get back a base raised to an exponent
+    // Post-condition: num is raised to exp, and so we get back a base raised to an exponent
     public static double power(double base, int exp) {
         if (base == 0)
             return 0;
