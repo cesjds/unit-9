@@ -1,10 +1,12 @@
 public class Worksheet2 {
     public static void main(String[] args) {
         // num is the variable used for testing the methods
-        int num = 123;
+        int num = -2;
 
         // Calling the methods
         System.out.println(reverseNum(num));
+        System.out.println();
+        System.out.println(recursiveFactorial(num));
         System.out.println();
     }
 
@@ -18,5 +20,15 @@ public class Worksheet2 {
         }
         else
             return "";
+    }
+
+
+    // Pre-condition: n is a positive integer
+    // Post-condition: the factorial will be returned
+    public static int recursiveFactorial (int num) {
+        if (num == 0)
+            return 1;
+        else
+            return (num * recursiveFactorial(num - 1));
     }
 }
