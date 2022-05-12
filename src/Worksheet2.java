@@ -1,13 +1,11 @@
 public class Worksheet2 {
     public static void main(String[] args) {
         // num is the variable used for testing the methods
-        int num = -2;
+        int num = 12;
 
         // Calling the methods
-        System.out.println(reverseNum(num));
-        System.out.println();
-        System.out.println(recursiveFactorial(num));
-        System.out.println();
+        System.out.println(reverseNum(num) + "\n");
+        System.out.println(recursiveFactorial(num) + "\n");
     }
 
 
