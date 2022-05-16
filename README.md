@@ -9,6 +9,9 @@ git clone git@github.com:cesjds/unit-9.git
 ```
 cd unit-9
 ```
+```
+idea .
+```
 ## Usage
 you can mess around with the functions and files in order to understand how the recursion methods work. 
 ## Plagarism
