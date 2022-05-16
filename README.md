@@ -15,8 +15,7 @@ idea .
 ## Usage
 you can mess around with the functions and files in order to understand how the recursion methods work. 
 ## Plagarism
-This repository is not meant for you to directly or partly copy my work. It is meant to help you understand any part which you do not understand and for me to help you with your own program. 
-
+Since there is no project in this unit, you can use the code freely and study with it towards the test. 
 
 
 
