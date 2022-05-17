@@ -67,7 +67,7 @@ public class FloodFill {
             int columns = inFile.nextInt();
 
             // Declaring the array with proper rows and columns
-            char grid[][] = new char[rows][columns];
+            char[][] grid = new char[rows][columns];
 
             // Filling the array with blank spaces
             for (int r = 0; r < rows; r++) {
