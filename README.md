@@ -15,7 +15,6 @@ idea .
 ## Usage
 you can mess around with the functions and files in order to understand how the recursion methods work. 
 ## Plagarism
-Since there is no project in this unit, you can use the code freely and study with it towards the test. 
-
+You are free to use any of the Worksheet classes in order to study towards the test. On the other hand, the FloodFill class is an individual project and you should not look or use my code in any shape or form. 
 
 
