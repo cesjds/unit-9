@@ -1,7 +1,7 @@
 /********************************************************************
- * Written by:
+ * Written by: Yoav Amit
  *
- * Period:
+ * Period: 1
  *
  * ASSIGNMENT:  To write a program that asks the user to input the
  * name of a datafile containing the outline of a figure. Then ask
