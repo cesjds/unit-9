@@ -1,10 +1,6 @@
 import javax.swing.*;
-import java.awt.*;
 import java.io.File;
-import java.util.Locale;
 import java.util.Scanner;
-
-import static java.lang.String.valueOf;
 
 /********************************************************************
  * Written by: Yoav Amit
@@ -50,8 +46,6 @@ import static java.lang.String.valueOf;
 
 public class FloodFill {
     public static void main(String[] args) {
-//        char grid[][] = fillArray();
-//        printArray(grid);
         printArray(fillArray());
     }
 
