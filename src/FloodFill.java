@@ -41,4 +41,44 @@
  *******************************************************************/
 
 public class FloodFill {
+    public static void main(String[] args) {
+
+    }
+
+    /**
+    asks the user for a file name and reads a ‘shape’ from a data file into a 2D array of chars.
+     **/
+    public static char fillArray() {
+
+    }
+
+
+    /**
+    asks the user for a starting point.
+    If the point is inside the shape, you should recursively
+    floodfill the shape. If the point is outside the shape the 2
+    ‘background’ should be floodfilled.  If the point is on a line
+    nothing should happen.  Error check the row & column to make
+    sure they are in the 2D array.
+    **/
+    public static void printArray() {
+
+    }
+
+
+    /**
+    a second print method that prints the floodfilled shape
+    and asks the user if (s)he would like to fill another shape.
+    **/
+    public static void printFloodFill() {
+
+    }
+
+
+    /**
+    a recursive floodFill method that does the floodfill.
+    **/
+    public static void floodFill() {
+
+    }
 }
