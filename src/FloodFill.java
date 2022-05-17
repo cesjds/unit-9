@@ -61,7 +61,7 @@ public class FloodFill {
     public static char[][] fillArray() {
         try {
             // Prompting the user for the text file name
-            String fileName = JOptionPane.showInputDialog("Enter a text file:");
+            String fileName = JOptionPane.showInputDialog("Enter the file name:");
 
             // Opening the file and confirming that the file is being read
             Scanner inFile = new Scanner(new File("data/" + fileName.toLowerCase() + ".txt"));
