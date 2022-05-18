@@ -118,15 +118,14 @@ public class FloodFill {
      sure they are in the 2D array.
      **/
     public static void printArray (char[][] grid) {
-        String[][] finalGrid = new String[15][25];
-
+        // Creates the message which will be presented in the input dialog
         StringBuilder gridBuild = new StringBuilder();
 
         // Adds the figure to the grid
         for (int r = 0; r < 15; r++) {
             gridBuild.append("\n");
             for (int c = 0; c < 25; c++) {
-                gridBuild.append(grid[r][c] + "   ");
+                gridBuild.append(grid[r][c]).append("   ");
             }
         }
 
