@@ -122,7 +122,7 @@ public class FloodFill {
 
         for (int r = 0; r < 15; r++) {
             for (int c = 0; c < 25; c++) {
-                finalGrid[r][c] = (String) (grid[r][c] + " ");
+                finalGrid[r][c] = (String) (grid[r][c] + "   ");
             }
         }
 
