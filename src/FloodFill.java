@@ -122,20 +122,20 @@ public class FloodFill {
 
         for (int r = 0; r < 15; r++) {
             for (int c = 0; c < 25; c++) {
-                finalGrid[r][c] = (String) (grid[r][c] + "   ");
+                finalGrid[r][c] = grid[r][c] + "   ";
             }
         }
 
-        String message = "";
+        StringBuilder gridBuild = new StringBuilder();
 
         for (int r = 0; r < 15; r++) {
-            message += "\n";
+            gridBuild.append("\n");
             for (int c = 0; c < 25; c++) {
-                message += finalGrid[r][c];
+                gridBuild.append(finalGrid[r][c]);
             }
         }
 
-        JOptionPane.showInputDialog(null, message);
+        JOptionPane.showInputDialog(null, gridBuild.toString());
     }
 
 
