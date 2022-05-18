@@ -121,13 +121,33 @@ public class FloodFill {
         // Creates the message which will be presented in the input dialog
         StringBuilder gridBuild = new StringBuilder();
 
-        // Adds the figure to the grid
-        for (int r = 0; r < 15; r++) {
-            gridBuild.append("\n");
+        // Adds empty space to grid
+        gridBuild.append("  ");
+
+        // Adds a row of numbers to the grid
+        for (int i = 0; i < 25; i++) {
+            if (i < 10)
+                gridBuild.append(i).append("  ");
+            else if (i < 20)
+                gridBuild.append(i-10).append("  ");
+            else if (i < 30)
+                gridBuild.append(i-20).append("  ");
+        }
+
+        // Adds a column of numbers to the grid
+        for (int i = 0; i < 15; i++) {
+            if (i < 10)
+                gridBuild.append("\n").append(i);
+            else if (i < 20)
+                gridBuild.append("\n").append(i-10);
             for (int c = 0; c < 25; c++) {
-                gridBuild.append(grid[r][c]).append("   ");
+                gridBuild.append(grid[i][c]).append("   ");
             }
         }
+
+        // adds extra space to make it neater
+        gridBuild.append("\n\n\n");
+        gridBuild.append("Enter starting row and column:");
 
         JOptionPane.showInputDialog(null, gridBuild.toString());
     }
