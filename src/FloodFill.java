@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.util.Scanner;
 
@@ -115,12 +116,27 @@ public class FloodFill {
      sure they are in the 2D array.
      **/
     public static void printArray (char[][] grid) {
+        String[][] finalGrid = new String[15][25];
+
         for (int r = 0; r < 15; r++) {
-            System.out.print("\n");
             for (int c = 0; c < 25; c++) {
-                System.out.print(grid[r][c] + " ");
+                finalGrid[r][c] = (String) (grid[r][c] + " ");
             }
         }
+
+        String message = "";
+
+        for (int r = 0; r < 15; r++) {
+            message += "\n";
+            for (int c = 0; c < 25; c++) {
+                message += finalGrid[r][c];
+            }
+        }
+
+
+
+//        UIManager.put("OptionPane.minimumSize",new Dimension(600,1000));
+        JOptionPane.showInputDialog(null, message);
     }
 
 
