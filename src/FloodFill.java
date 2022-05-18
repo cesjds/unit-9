@@ -168,14 +168,14 @@ public class FloodFill {
         // color for text field (where you are inputting data)
         UIManager.put("TextField.background", Color.white);
         // font for message in text field
-        UIManager.put("TextField.font", new FontUIResource(new Font("SF Mono", Font.PLAIN, 24)));
+        UIManager.put("TextField.font", new FontUIResource(new Font("SF Pro", Font.PLAIN, 24)));
         // color for message in text field
         UIManager.put("TextField.foreground", Color.black);
 
         // The color of the panel
-        UIManager.put("Panel.background",new Color(196, 196, 196));
+        UIManager.put("Panel.background",new Color(68, 68, 68));
         // The color around the outside of the panel
-        UIManager.put("OptionPane.background",new Color(196, 196, 196));
+        UIManager.put("OptionPane.background",new Color(68, 68, 68));
 
         // Buttons at bottom
         UIManager.put("Button.background",new Color(255, 255, 255));
