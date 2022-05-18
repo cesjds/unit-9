@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
 import java.awt.*;
 import java.io.File;
 import java.util.Scanner;
@@ -47,6 +48,7 @@ import java.util.Scanner;
 
 public class FloodFill {
     public static void main(String[] args) {
+        changeJOP();
         printArray(fillArray());
     }
 
@@ -151,5 +153,33 @@ public class FloodFill {
      **/
     public static void floodFill () {
 
+    }
+
+    /**
+    changes the font to a mono font in order to make JOP print a square grid that works
+    **/
+    public static void changeJOP() {
+
+        // The font of the message text
+        UIManager.put("Label.font", new FontUIResource(new Font("SF Mono", Font.PLAIN, 58)));
+        // The color of the message text
+        UIManager.put("OptionPane.messageForeground",new Color(0, 0, 0));
+
+        // color for text field (where you are inputting data)
+        UIManager.put("TextField.background", Color.white);
+        // font for message in text field
+        UIManager.put("TextField.font", new FontUIResource(new Font("SF Mono", Font.PLAIN, 24)));
+        // color for message in text field
+        UIManager.put("TextField.foreground", Color.black);
+
+        // The color of the panel
+        UIManager.put("Panel.background",new Color(196, 196, 196));
+        // The color around the outside of the panel
+        UIManager.put("OptionPane.background",new Color(196, 196, 196));
+
+        // Buttons at bottom
+        UIManager.put("Button.background",new Color(255, 255, 255));
+        UIManager.put("Button.foreground", new Color(0, 0, 0));
+        UIManager.put("Button.font", new FontUIResource	(new Font("SF Pro", Font.PLAIN, 14)));
     }
 }
