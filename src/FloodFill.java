@@ -133,9 +133,6 @@ public class FloodFill {
             }
         }
 
-
-
-//        UIManager.put("OptionPane.minimumSize",new Dimension(600,1000));
         JOptionPane.showInputDialog(null, message);
     }
 
