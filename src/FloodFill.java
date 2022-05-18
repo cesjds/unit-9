@@ -120,18 +120,13 @@ public class FloodFill {
     public static void printArray (char[][] grid) {
         String[][] finalGrid = new String[15][25];
 
-        for (int r = 0; r < 15; r++) {
-            for (int c = 0; c < 25; c++) {
-                finalGrid[r][c] = grid[r][c] + "   ";
-            }
-        }
-
         StringBuilder gridBuild = new StringBuilder();
 
+        // Adds the figure to the grid
         for (int r = 0; r < 15; r++) {
             gridBuild.append("\n");
             for (int c = 0; c < 25; c++) {
-                gridBuild.append(finalGrid[r][c]);
+                gridBuild.append(grid[r][c] + "   ");
             }
         }
 
