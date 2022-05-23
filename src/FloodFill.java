@@ -120,25 +120,20 @@ public class FloodFill {
     public static void printArray (char[][] grid) {
         String strGrid = "";
 
-        strGrid += "  ";
+        strGrid += "   ";
 
-        for (int c = 0; c < grid.length; c++) {
-            while (c >= 10) {
-                c -= 10;
-            }
-            strGrid += (c + "  ");
+        for (int c = 0; c < grid[0].length; c++) {
+            strGrid += (c % 10 + "  ");
         }
 
-        for (int r = 0; r < grid[0].length; r++) {
-            while (r >= 10) {
-                r -= 10;
-            }
-            strGrid += (r + "\n");
+        for (int r = 0; r < grid.length; r++) {
+            strGrid += (r % 10);
 
-            for (int c = 0; r < grid.length; c++)
-                strGrid += (grid[r][c] + "  ");
+            for (int c = 0; c < grid[0].length; c++)
+                strGrid += (grid[r][c] + "   ");
+
+            strGrid += "\n";
         }
-
 
         JOptionPane.showInputDialog(null, strGrid);
     }
@@ -166,7 +161,7 @@ public class FloodFill {
     public static void changeJOP() {
 
         // The font of the message text
-        UIManager.put("Label.font", new FontUIResource(new Font("SF Mono", Font.PLAIN, 58)));
+        UIManager.put("Label.font", new FontUIResource(new Font("Monaco", Font.PLAIN, 58)));
         // The color of the message text
         UIManager.put("OptionPane.messageForeground",new Color(0, 0, 0));
 
