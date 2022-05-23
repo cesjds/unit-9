@@ -118,38 +118,29 @@ public class FloodFill {
      sure they are in the 2D array.
      **/
     public static void printArray (char[][] grid) {
-        // Creates the message which will be presented in the input dialog
-        StringBuilder gridBuild = new StringBuilder();
+        String strGrid = "";
 
-        // Adds empty space to grid
-        gridBuild.append("  ");
+        strGrid += "  ";
 
-        // Adds a row of numbers to the grid
-        for (int i = 0; i < 25; i++) {
-            if (i < 10)
-                gridBuild.append(i).append("  ");
-            else if (i < 20)
-                gridBuild.append(i-10).append("  ");
-            else if (i < 30)
-                gridBuild.append(i-20).append("  ");
-        }
-
-        // Adds a column of numbers to the grid
-        for (int i = 0; i < 15; i++) {
-            if (i < 10)
-                gridBuild.append("\n").append(i);
-            else if (i < 20)
-                gridBuild.append("\n").append(i-10);
-            for (int c = 0; c < 25; c++) {
-                gridBuild.append(grid[i][c]).append("   ");
+        for (int c = 0; c < grid.length; c++) {
+            while (c >= 10) {
+                c -= 10;
             }
+            strGrid += (c + "  ");
         }
 
-        // adds extra space to make it neater
-        gridBuild.append("\n\n\n");
-        gridBuild.append("Enter starting row and column:");
+        for (int r = 0; r < grid[0].length; r++) {
+            while (r >= 10) {
+                r -= 10;
+            }
+            strGrid += (r + "\n");
 
-        JOptionPane.showInputDialog(null, gridBuild.toString());
+            for (int c = 0; r < grid.length; c++)
+                strGrid += (grid[r][c] + "  ");
+        }
+
+
+        JOptionPane.showInputDialog(null, strGrid);
     }
 
 
