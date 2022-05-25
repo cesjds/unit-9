@@ -118,9 +118,7 @@ public class FloodFill {
      sure they are in the 2D array.
      **/
     public static void printArray (char[][] grid) {
-        String strGrid = "";
-
-        strGrid += "   ";
+        String strGrid = "  ";
 
         for (int c = 0; c < grid[0].length; c++) {
             strGrid += (c % 10 + "  ");
@@ -129,13 +127,15 @@ public class FloodFill {
         for (int r = 0; r < grid.length; r++) {
             strGrid += (r % 10);
 
+            strGrid += " ";
+
             for (int c = 0; c < grid[0].length; c++)
-                strGrid += (grid[r][c] + "   ");
+                strGrid += (grid[r][c] + "  ");
 
             strGrid += "\n";
         }
 
-        JOptionPane.showInputDialog(null, strGrid);
+        System.out.println(strGrid);
     }
 
 
@@ -159,16 +159,15 @@ public class FloodFill {
     changes the font to a mono font in order to make JOP print a square grid that works
     **/
     public static void changeJOP() {
-
         // The font of the message text
-        UIManager.put("Label.font", new FontUIResource(new Font("Monaco", Font.PLAIN, 58)));
+        UIManager.put("Label.font", new FontUIResource(new Font("SF Mono", Font.PLAIN, 24)));
         // The color of the message text
         UIManager.put("OptionPane.messageForeground",new Color(0, 0, 0));
 
         // color for text field (where you are inputting data)
         UIManager.put("TextField.background", Color.white);
         // font for message in text field
-        UIManager.put("TextField.font", new FontUIResource(new Font("SF Pro", Font.PLAIN, 24)));
+        UIManager.put("TextField.font", new FontUIResource(new Font("SF Mono", Font.PLAIN, 24)));
         // color for message in text field
         UIManager.put("TextField.foreground", Color.black);
 
@@ -180,6 +179,6 @@ public class FloodFill {
         // Buttons at bottom
         UIManager.put("Button.background",new Color(255, 255, 255));
         UIManager.put("Button.foreground", new Color(0, 0, 0));
-        UIManager.put("Button.font", new FontUIResource	(new Font("SF Pro", Font.PLAIN, 14)));
+        UIManager.put("Button.font", new FontUIResource	(new Font("SF Mono", Font.PLAIN, 14)));
     }
 }
