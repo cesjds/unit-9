@@ -58,12 +58,15 @@ public class FloodFill {
     public static char[][] fillArray() {
         try {
             // Prompting the user for the text file name
-            String fileName = JOptionPane.showInputDialog("Enter the file name:");
+//            String fileName = JOptionPane.showInputDialog("Enter the file name:");
+
+            // Give direct data for testing
+            String fileName = "ff1";
 
             // Opening the file and confirming that the file is being read
             Scanner inFile = new Scanner(new File("data/" + fileName.toLowerCase() + ".txt"));
             String message = "Extracting data from: " + fileName.toLowerCase() + ".txt";
-            JOptionPane.showMessageDialog(null, message);
+//            JOptionPane.showMessageDialog(null, message);
 
             // Finding the amount of rows and columns
             int rows = inFile.nextInt();
@@ -136,6 +139,9 @@ public class FloodFill {
         }
 
         System.out.println(strGrid);
+
+        JOptionPane.showInputDialog(null, strGrid);
+
     }
 
 
