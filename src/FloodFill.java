@@ -138,9 +138,9 @@ public class FloodFill {
             strGrid += "\n";
         }
 
+        // Tests the printArray method using SOP since JOP isn't using a monospace font
         System.out.println(strGrid);
-
-        JOptionPane.showInputDialog(null, strGrid);
+//        JOptionPane.showInputDialog(null, strGrid);
 
     }
 
@@ -166,14 +166,14 @@ public class FloodFill {
     **/
     public static void changeJOP() {
         // The font of the message text
-        UIManager.put("Label.font", new FontUIResource(new Font("SF Mono", Font.PLAIN, 24)));
+        UIManager.put("Label.font", new FontUIResource(new Font("Menlo", Font.PLAIN, 24)));
         // The color of the message text
         UIManager.put("OptionPane.messageForeground",new Color(0, 0, 0));
 
         // color for text field (where you are inputting data)
         UIManager.put("TextField.background", Color.white);
         // font for message in text field
-        UIManager.put("TextField.font", new FontUIResource(new Font("SF Mono", Font.PLAIN, 24)));
+        UIManager.put("TextField.font", new FontUIResource(new Font("Menlo", Font.PLAIN, 24)));
         // color for message in text field
         UIManager.put("TextField.foreground", Color.black);
 
@@ -185,6 +185,6 @@ public class FloodFill {
         // Buttons at bottom
         UIManager.put("Button.background",new Color(255, 255, 255));
         UIManager.put("Button.foreground", new Color(0, 0, 0));
-        UIManager.put("Button.font", new FontUIResource	(new Font("SF Mono", Font.PLAIN, 14)));
+        UIManager.put("Button.font", new FontUIResource	(new Font("Menlo", Font.PLAIN, 14)));
     }
 }
