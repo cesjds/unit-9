@@ -48,7 +48,7 @@ import java.util.Scanner;
 public class FloodFill {
     public static void main(String[] args) {
         changeJOP();
-        int again = 0;
+        int again;
         char[][] picture;
 
         do {
@@ -68,10 +68,7 @@ public class FloodFill {
     public static char[][] readIn() {
         try {
             // Prompting the user for the text file name
-//            String fileName = JOptionPane.showInputDialog("Enter the file name:");
-
-            // Give direct data for testing
-            String fileName = "ff1";
+            String fileName = JOptionPane.showInputDialog("Enter the file name:");
 
             // Opening the file and confirming that the file is being read
             Scanner inFile = new Scanner(new File("data/" + fileName.toLowerCase() + ".txt"));
@@ -140,12 +137,9 @@ public class FloodFill {
             strGrid += "\n";
         }
 
-        // Tests the printArray method using SOP since JOP isn't using a monospace font
-        System.out.println(strGrid);
-
         // Prompts user for starting row and column
-        String coordinates = "Enter starting row and column:";
-        return JOptionPane.showInputDialog(null, coordinates);
+        strGrid += "\n\nEnter starting row and column:";
+        return JOptionPane.showInputDialog(null, strGrid);
     }
 
 
@@ -154,30 +148,29 @@ public class FloodFill {
      * and asks the user if (s)he would like to fill another shape.
      */
     public static int printFilledShape(char[][] picture) {
-        String strGrid = "  ";
+        String filledStrGrid = "  ";
 
         for (int c = 0; c < picture[0].length; c++) {
-            strGrid += (c % 10 + "  ");
+            filledStrGrid += (c % 10 + "  ");
         }
 
-        strGrid += "\n";
+        filledStrGrid += "\n";
 
         for (int r = 0; r < picture.length; r++) {
-            strGrid += (r % 10);
+            filledStrGrid += (r % 10);
 
-            strGrid += " ";
+            filledStrGrid += " ";
 
             for (int c = 0; c < picture[0].length; c++)
-                strGrid += (picture[r][c] + "  ");
+                filledStrGrid += (picture[r][c] + "  ");
 
-            strGrid += "\n";
+            filledStrGrid += "\n";
         }
 
-        // Tests the printArray method using SOP since JOP isn't using a monospace font
-        System.out.println(strGrid);
+        filledStrGrid += "\n\nDo you want to run this program again?";
 
         // Asks the user if he would like to run the program again
-        String again = JOptionPane.showInputDialog(null, "Do you want to run this program again?");
+        String again = JOptionPane.showInputDialog(null, filledStrGrid);
         if (again.equalsIgnoreCase("yes"))
             return 0;
         else
@@ -189,14 +182,15 @@ public class FloodFill {
      a recursive floodFill method that does the floodfill.
      **/
     public static void floodFill (char[][] picture, int startRow, int startCol) {
-        if (picture[startRow][startCol] == '*' || startRow < 0 || startCol < 0 || startRow >= picture.length || startCol >= picture[0].length)
+        if (picture[startRow][startCol] == '*' || startRow < 0 || startCol < 0 || startRow > picture.length - 1 || startCol > picture[0].length - 1) {
             return;
+        }
         else {
-            picture[startRow][startCol] += '*';
-            floodFill(picture, startRow - 1, startCol);
-            floodFill(picture, startRow, startCol - 1);
+            picture[startRow][startCol] = '*';
             floodFill(picture, startRow + 1, startCol);
+            floodFill(picture, startRow - 1, startCol);
             floodFill(picture, startRow, startCol + 1);
+            floodFill(picture, startRow, startCol - 1);
         }
     }
 
@@ -208,6 +202,8 @@ public class FloodFill {
         UIManager.put("Label.font", new FontUIResource(new Font("Menlo", Font.PLAIN, 24)));
         // The color of the message text
         UIManager.put("OptionPane.messageForeground",new Color(0, 0, 0));
+
+        UIManager.put("OptionPane.ShowInputDialog", new FontUIResource(new Font("Menlo", Font.PLAIN, 24)));
 
         // color for text field (where you are inputting data)
         UIManager.put("TextField.background", Color.white);
