@@ -143,19 +143,45 @@ public class FloodFill {
         // Tests the printArray method using SOP since JOP isn't using a monospace font
         System.out.println(strGrid);
 
-        return strGrid;
+        // Prompts user for starting row and column
+        String coordinates = "Enter starting row and column:";
+        return JOptionPane.showInputDialog(null, coordinates);
     }
 
 
     /**
      * a second print method that prints the floodfilled shape
      * and asks the user if (s)he would like to fill another shape.
-     *
-     * @return
      */
     public static int printFilledShape(char[][] picture) {
+        String strGrid = "  ";
 
-        return 0;
+        for (int c = 0; c < picture[0].length; c++) {
+            strGrid += (c % 10 + "  ");
+        }
+
+        strGrid += "\n";
+
+        for (int r = 0; r < picture.length; r++) {
+            strGrid += (r % 10);
+
+            strGrid += " ";
+
+            for (int c = 0; c < picture[0].length; c++)
+                strGrid += (picture[r][c] + "  ");
+
+            strGrid += "\n";
+        }
+
+        // Tests the printArray method using SOP since JOP isn't using a monospace font
+        System.out.println(strGrid);
+
+        // Asks the user if he would like to run the program again
+        String again = JOptionPane.showInputDialog(null, "Do you want to run this program again?");
+        if (again.equalsIgnoreCase("yes"))
+            return 0;
+        else
+            return 1;
     }
 
 
@@ -163,7 +189,15 @@ public class FloodFill {
      a recursive floodFill method that does the floodfill.
      **/
     public static void floodFill (char[][] picture, int startRow, int startCol) {
-
+        if (picture[startRow][startCol] == '*' || startRow < 0 || startCol < 0 || startRow >= picture.length || startCol >= picture[0].length)
+            return;
+        else {
+            picture[startRow][startCol] += '*';
+            floodFill(picture, startRow - 1, startCol);
+            floodFill(picture, startRow, startCol - 1);
+            floodFill(picture, startRow + 1, startCol);
+            floodFill(picture, startRow, startCol + 1);
+        }
     }
 
     /**
