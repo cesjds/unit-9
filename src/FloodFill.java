@@ -167,14 +167,21 @@ public class FloodFill {
             filledStrGrid += "\n";
         }
 
-        filledStrGrid += "\n\nDo you want to run this program again?";
+        filledStrGrid += "\n\nWould you like to fill another shape?";
 
-        // Asks the user if he would like to run the program again
-        String again = JOptionPane.showInputDialog(null, filledStrGrid);
-        if (again.equalsIgnoreCase("yes"))
-            return 0;
-        else
-            return 1;
+        // Creates buttons to ask if user would like to run program again
+        String[] buttons = {"Yes",
+                "No"};
+
+        int choice = JOptionPane.showOptionDialog
+                (null, filledStrGrid, "Choice",
+                        0, 3, null, buttons, null);
+
+        switch (choice) {
+            case 0: return 0;
+            case 1: return 1;
+            default: return 1;
+        }
     }
 
 
