@@ -182,14 +182,14 @@ public class FloodFill {
      a recursive floodFill method that does the floodfill.
      **/
     public static void floodFill (char[][] picture, int startRow, int startCol) {
-        if (picture[startRow][startCol] == '*' || startRow < 0 || startCol < 0 || startRow > picture.length - 1 || startCol > picture[0].length - 1) {
+        if (startRow < 0 || startCol < 0 || startRow > picture.length - 1 || startCol > picture[0].length - 1 || picture[startRow][startCol] == '*') {
             return;
         }
         else {
             picture[startRow][startCol] = '*';
             floodFill(picture, startRow + 1, startCol);
-            floodFill(picture, startRow - 1, startCol);
             floodFill(picture, startRow, startCol + 1);
+            floodFill(picture, startRow - 1, startCol);
             floodFill(picture, startRow, startCol - 1);
         }
     }
