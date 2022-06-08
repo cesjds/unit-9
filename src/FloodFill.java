@@ -108,7 +108,6 @@ public class FloodFill {
         }
     }
 
-
     /**
      asks the user for a starting point.
      If the point is inside the shape, you should recursively
@@ -141,7 +140,6 @@ public class FloodFill {
         strGrid += "\n\nEnter starting row and column:";
         return JOptionPane.showInputDialog(null, strGrid);
     }
-
 
     /**
      * a second print method that prints the floodfilled shape
@@ -184,7 +182,6 @@ public class FloodFill {
         }
     }
 
-
     /**
      a recursive floodFill method that does the floodfill.
      **/
@@ -206,16 +203,16 @@ public class FloodFill {
     **/
     public static void changeJOP() {
         // The font of the message text
-        UIManager.put("Label.font", new FontUIResource(new Font("Menlo", Font.PLAIN, 24)));
+        UIManager.put("Label.font", new FontUIResource(new Font("Consolas", Font.PLAIN, 24)));
         // The color of the message text
         UIManager.put("OptionPane.messageForeground",new Color(0, 0, 0));
 
-        UIManager.put("OptionPane.ShowInputDialog", new FontUIResource(new Font("Menlo", Font.PLAIN, 24)));
+        UIManager.put("OptionPane.ShowInputDialog", new FontUIResource(new Font("Consolas", Font.PLAIN, 24)));
 
         // color for text field (where you are inputting data)
         UIManager.put("TextField.background", Color.white);
         // font for message in text field
-        UIManager.put("TextField.font", new FontUIResource(new Font("Menlo", Font.PLAIN, 24)));
+        UIManager.put("TextField.font", new FontUIResource(new Font("Consolas", Font.PLAIN, 24)));
         // color for message in text field
         UIManager.put("TextField.foreground", Color.black);
 
@@ -227,6 +224,6 @@ public class FloodFill {
         // Buttons at bottom
         UIManager.put("Button.background",new Color(255, 255, 255));
         UIManager.put("Button.foreground", new Color(0, 0, 0));
-        UIManager.put("Button.font", new FontUIResource	(new Font("Menlo", Font.PLAIN, 14)));
+        UIManager.put("Button.font", new FontUIResource	(new Font("Consolas", Font.PLAIN, 14)));
     }
 }
